@@ -2,9 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from .forms import UserForm
 
-def hello(request):
-    return HttpResponse("Привет, это моё первое приложение на Django!")
-
 def userInitialezed(request):
     if request.method == 'POST':
         form = UserForm(request.POST)
