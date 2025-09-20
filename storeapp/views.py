@@ -39,4 +39,7 @@ def userInitialezed(request):
     else:
         form = UserForm()
 
-    return render(request, 'store.html', {'form': form})        
+    return render(request, 'store_form.html', {'form': form})        
+
+def homePage(request):
+    return render(request, 'store_page.html')
