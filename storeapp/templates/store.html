@@ -2,10 +2,11 @@
 <html>
     <head></head>
     <body>
+        <p>Добро пожаловать! Пора проверить свои настройки</p>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" value = "Send"> Принять данные! </button>
+            <button type="submit"> Принять данные! </button>
         </form>
     </body>
 </html>
