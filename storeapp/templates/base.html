@@ -3,10 +3,13 @@
     <head>
         <meta charset="utf-8"/>
         <title> Магазин одежды "Кошкин дом" </title>
+        <link rel = "stylesheet" href = "static/style.css"/>
     </head>
     <body>
-        <h1> Кошкин Дом </h1> 
-        <p>Здесь мы точно подберём тебе что-нибудь замур-р-рчательное!</p>
+        <div class = "header">
+            <h1> Кошкин Дом </h1> 
+            <p>Здесь мы точно подберём тебе что-нибудь замур-р-рчательное!</p>
+        </div>
         <div>{% block content %}{% endblock content %}</div>
     </body>
 </html>

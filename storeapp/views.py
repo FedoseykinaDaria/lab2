@@ -47,6 +47,7 @@ clothes = [
     'src': 'static/casual_tshirt.jpg',
     'description': 'Футболка с котятами среди ярких звёзд точно даст вам ощущеия единения с этой вселенной'}    
 ]
+choosed_clothes = []
 
 def userInitialezed(request):
     if request.method == 'POST':
@@ -69,8 +70,17 @@ def userInitialezed(request):
             favSizesName = []
             for i in favSizes:
                 favSizesName.append(sizes[int(i)][1])
+            
+            for c in clothes:
+                for stl in favStylesName:
+                    if c['style'] == stl:
+                        for sz in favSizesName:
+                            if sz in c['size']:
+                                choosed_clothes.append(c)
+                                break
 
-            response = render(request, 'store_page.html', context = {'clothes': clothes})
+
+            response = render(request, 'store_page.html', context = {'clothes': choosed_clothes})
             response.set_cookie("name", name)
             response.set_cookie("themeColor", themeColor)
             response.set_cookie("favStyles", favStylesName)

@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-    <p>Добро пожаловать! Пора проверить свои настройки</p>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <a href="{% url 'home' %}"><button type="submit"> Принять данные! </button></a>
-    </form>
+    <div class = "userform">
+        <p style = "font-size: 25px; margin-bottom: 0px; text-align: center;">Добро пожаловать в магазин "Кошкин Дом"!</p>
+        <p>Прежде чем мы подберём тебе одежду, нам нужно узнать о твоих предпочтениях!</p>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <a href="{% url 'home' %}"><button> Подобрать одежду! </button></a>
+        </form>
+    </div>
 {% endblock content %}
