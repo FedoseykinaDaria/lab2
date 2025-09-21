@@ -2,14 +2,18 @@
 {% block content %}
     <p>Поздравляем, вы настроили страницу!</p>
     <div class = "container">
-        <div class = "note">
+        <div class = "card">
             {% for note in clothes %}
                 {% if note.style in request.COOKIES.favStyles %}  
-                    <h2>{{note.title}}</h2>
-                    <p>{{note.size}}</p>
-                    <img src={{note.src}}/>
-                    <p>{{note.description}}</p>
-                    <br>
+                    {% for s in note.size %}
+                        {% if s in request.COOKIES.favSizes %}
+                            <h2>{{note.title}}</h2>
+                            <p>{{note.size}}</p>
+                            <img src={{note.src}}/>
+                            <p>{{note.description}}</p>
+                            <br>
+                        {% endif %}
+                    {% endfor %}
                 {% endif %}
             {% endfor %}
         </div>
