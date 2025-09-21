@@ -29,7 +29,7 @@ clothes = [
     {'title': 'Гипнофутболка',
     'style': 'dream',
     'size': ['s', 'm', 'l'],
-    'src': 'static/dream_thsirt.jpg',
+    'src': 'static/dream_tshirt.jpg',
     'description': 'После того, как вы наденете эту футболку, окружающие точно не смогут оторвать от вас взляда'},
     {'title': 'Тигровые джинсы',
     'style': 'casual',
@@ -45,7 +45,7 @@ clothes = [
     'style': 'casual',
     'size': ['s', 'm', 'l'],
     'src': 'static/casual_tshirt.jpg',
-    'description': 'Кошка с котятами среди ярких звёзд точно даст вам ощущеия единения с этой вселенной'}    
+    'description': 'Футболка с котятами среди ярких звёзд точно даст вам ощущеия единения с этой вселенной'}    
 ]
 
 def userInitialezed(request):
@@ -71,7 +71,6 @@ def userInitialezed(request):
                 favSizesName.append(sizes[int(i)][1])
 
             response = render(request, 'store_page.html', context = {'clothes': clothes})
-            #HttpResponse(f"<p>Привет, {name}!</p> <p>Тема твоего сайта: {themes[int(themeColor)][1]}. Твои любимые стили: {favStylesName}</p>")
             response.set_cookie("name", name)
             response.set_cookie("themeColor", themeColor)
             response.set_cookie("favStyles", favStylesName)

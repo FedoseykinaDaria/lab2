@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head></head>
-    <body>
-        <p>Добро пожаловать! Пора проверить свои настройки</p>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <a href="{% url 'home' %}"><button type="submit"> Принять данные! </button></a>
-        </form>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+    <p>Добро пожаловать! Пора проверить свои настройки</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <a href="{% url 'home' %}"><button type="submit"> Принять данные! </button></a>
+    </form>
+{% endblock content %}

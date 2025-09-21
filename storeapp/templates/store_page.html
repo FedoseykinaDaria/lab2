@@ -1,20 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head></head>
-    <body>
-        <p>Поздравляем, вы настроили страницу!</p>
-        <div class = "container">
-            <div class = "note">
-                {% for note in clothes %}
-                    {% if note.style in request.COOKIES.favStyles %}  
-                        <h2>{{note.title}}</h2>
-                        <p>{{note.size}}</p>
-                        <img src={{note.src}}/>
-                        <p>{{note.description}}</p>
-                        <br>
-                    {% endif %}
-                {% endfor %}
-            </div>
+{% extends "base.html" %}
+{% block content %}
+    <p>Поздравляем, вы настроили страницу!</p>
+    <div class = "container">
+        <div class = "note">
+            {% for note in clothes %}
+                {% if note.style in request.COOKIES.favStyles %}  
+                    <h2>{{note.title}}</h2>
+                    <p>{{note.size}}</p>
+                    <img src={{note.src}}/>
+                    <p>{{note.description}}</p>
+                    <br>
+                {% endif %}
+            {% endfor %}
         </div>
-    </body>
-</html>
+    </div>
+{% endblock content %}
