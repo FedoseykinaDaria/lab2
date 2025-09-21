@@ -18,15 +18,20 @@
             return matches ? decodeURIComponent(matches[1]) : undefined;
         }
 
-        document.querySelector("select").addEventListener('change', function(e){
-            if (document.querySelector("select").value == 0){
-                document.cookie = "themeColor=light";
-                document.querySelector("link").href = "static/light.css";
-            }
-            else{
-                document.cookie = "themeColor=dark";
-                document.querySelector("link").href = "static/dark.css";
-            }
-        })
+        if(document.querySelector("select")){
+            document.querySelector("select").addEventListener('change', function(e){
+                if (document.querySelector("select").value == 0){
+                    document.cookie = "themeColor=light";
+                    document.querySelector("link").href = "static/light.css";
+                }
+                else{
+                    document.cookie = "themeColor=dark";
+                    document.querySelector("link").href = "static/dark.css";
+                }
+            })
+        }
+        else{
+            document.querySelector("link").href = 'static/' + getCookie("themeColor") +'.css';
+        }
     </script>
 </html>

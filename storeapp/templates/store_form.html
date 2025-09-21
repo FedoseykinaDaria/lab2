@@ -6,7 +6,7 @@
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <a href="{% url 'home' %}"><button> Подобрать одежду! </button></a>
+            <a href="{% url 'home' %}"><button> Тыкни, чтобы подобрать одежду! </button></a>
         </form>
     </div>
 {% endblock content %}

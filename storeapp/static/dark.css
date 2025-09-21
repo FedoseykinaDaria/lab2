@@ -3,9 +3,13 @@
     src: url("RubikGemstones-Regular.ttf");
 }
 
+body{
+    background-color: black;
+    color: whitesmoke;
+}
 
 .header{
-    background-image: url('header_background.jpeg');
+    background-image: url('header_background_black.jpg');
     background-repeat: no-repeat;
     text-align: center;
     color: gainsboro;
@@ -19,6 +23,12 @@
     font-size: 50px;
     margin-bottom: 0px;
 }
+input, select, button{
+    background-color: black;
+    border-color: white;
+    color: white;
+}
+
 .userform{
     font-family: Arial, Helvetica, sans-serif;
     margin-left: 400px;
@@ -61,7 +71,7 @@ ul.clothesSizes li{
     list-style-type: none;
     border-radius: 10px;
     border: 2px;
-    border-color: black;
+    border-color:white;
     border-style: solid;
     padding: 5px;
 }
