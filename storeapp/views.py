@@ -28,7 +28,8 @@ def userInitialezed(request):
             for i in favSizes:
                 favSizesName.append(sizes[int(i)][1])
 
-            response = HttpResponse(f"<p>Привет, {name}!</p> <p>Тема твоего сайта: {themes[int(themeColor)][1]}. Твои любимые стили: {favStylesName}</p>")
+            response = render(request, 'store_page.html')
+            #HttpResponse(f"<p>Привет, {name}!</p> <p>Тема твоего сайта: {themes[int(themeColor)][1]}. Твои любимые стили: {favStylesName}</p>")
             response.set_cookie("name", name)
             response.set_cookie("themeColor", themeColor)
             response.set_cookie("favStyles", favStyles)
