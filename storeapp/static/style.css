@@ -52,3 +52,15 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+h2{
+    font-family: "RubikGemstones";   
+}
+ul.clothesSizes li{
+    display: inline;
+    list-style-type: none;
+    border-radius: 10px;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    padding: 5px;
+}

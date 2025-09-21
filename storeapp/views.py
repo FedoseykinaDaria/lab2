@@ -15,7 +15,7 @@ clothes = [
     'style': 'goth',
     'size': ['xs', 's', 'm', 'l', 'xl'],
     'src': 'static/goth_hat.jpg',
-    'description': 'Эта шапка поможет вам не только выглядить стильно, но и не даст вашим мыслям уйти раньше времени'},
+    'description': 'Эта шапка не только поможет вам выглядеть стильно, но и не даст вашим мыслям уйти раньше времени'},
     {'title': 'Майка котопровидца',
     'style': 'goth',
     'size': ['m', 'l', 'xl'],
@@ -73,7 +73,7 @@ def userInitialezed(request):
             
             for c in clothes:
                 for stl in favStylesName:
-                    if c['style'] == stl:
+                    if stl == c['style']:
                         for sz in favSizesName:
                             if sz in c['size']:
                                 choosed_clothes.append(c)

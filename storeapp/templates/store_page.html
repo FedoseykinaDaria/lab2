@@ -7,9 +7,14 @@
             <div class = "image_info">
                 <img src={{note.src}} style="height: 250px; border-radius: 100px;"/>
             </div>
-            <div class = "description_info">
+            <div class = "description_info" style = "margin: 10px; font-family: Arial, Helvetica, sans-serif;">
                 <h2>{{note.title}}</h2>
-                <p>{{note.size}}</p>
+                <p style = "text-align: right; font-size: 25px;">{{note.style}}</p>
+                <ul class = "clothesSizes">
+                    {% for s in note.size %}
+                        <li>{{s}}</li>
+                    {% endfor %}
+                </ul>
                 <p>{{note.description}}</p>
             </div>
                 <br>
