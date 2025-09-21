@@ -1,0 +1,67 @@
+@font-face {
+    font-family: "RubikGemstones";
+    src: url("RubikGemstones-Regular.ttf");
+}
+
+
+.header{
+    background-image: url('header_background.jpeg');
+    background-repeat: no-repeat;
+    text-align: center;
+    color: gainsboro;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10px;
+}
+.header h1{
+    font-family: "RubikGemstones";
+    color:white;
+    font-size: 50px;
+    margin-bottom: 0px;
+}
+.userform{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-top: 50px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 0px;
+    padding-bottom: 30px;
+    border: 2px;
+    border-radius: 50px;
+    border-color: rgb(160, 160, 160);
+    border-style: solid;
+}
+.card{
+    border: 2px;
+    border-radius: 50px;
+    border-color: rgb(160, 160, 160);
+    border-style: solid;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 500px;
+    margin: 10px;
+    padding: 10px;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+h2{
+    font-family: "RubikGemstones";   
+}
+ul.clothesSizes li{
+    display: inline;
+    list-style-type: none;
+    border-radius: 10px;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    padding: 5px;
+}

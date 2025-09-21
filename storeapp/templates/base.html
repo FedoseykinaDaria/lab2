@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8"/>
         <title> Магазин одежды "Кошкин дом" </title>
-        <link rel = "stylesheet" href = "static/style.css"/>
+        <link rel = "stylesheet" href = "static/light.css"/>
     </head>
     <body>
         <div class = "header">
@@ -12,4 +12,21 @@
         </div>
         <div>{% block content %}{% endblock content %}</div>
     </body>
+    <script>
+        function getCookie(name) {
+            let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+            return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
+
+        document.querySelector("select").addEventListener('change', function(e){
+            if (document.querySelector("select").value == 0){
+                document.cookie = "themeColor=light";
+                document.querySelector("link").href = "static/light.css";
+            }
+            else{
+                document.cookie = "themeColor=dark";
+                document.querySelector("link").href = "static/dark.css";
+            }
+        })
+    </script>
 </html>

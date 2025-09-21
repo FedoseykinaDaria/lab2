@@ -54,8 +54,6 @@ def userInitialezed(request):
         form = UserForm(request.POST)
         if form.is_valid():
             name = form.cleaned_data['name']
-            
-            themeColor = form.cleaned_data['themeColor']
 
             favStyles = form.cleaned_data['favStyles']
             if len(favStyles) == 0:
@@ -82,7 +80,6 @@ def userInitialezed(request):
 
             response = render(request, 'store_page.html', context = {'clothes': choosed_clothes})
             response.set_cookie("name", name)
-            response.set_cookie("themeColor", themeColor)
             response.set_cookie("favStyles", favStylesName)
             response.set_cookie("favSizes", favSizesName)
 
