@@ -3,6 +3,12 @@
     <head></head>
     <body>
         <p>Поздравляем, вы настроили страницу!</p>
-        </form>
+        <div class = "container">
+            {% for note in clothes %}
+                <h2>{{note.title}}</h2>
+                <p>{{note.description}}</p>
+                <br>
+            {% endfor %}
+        </div>
     </body>
 </html>

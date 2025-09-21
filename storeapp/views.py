@@ -5,6 +5,12 @@ from .forms import UserForm
 themes = [(0, 'Светлый'), (1, 'Тёмный')]
 styles = [(0, "goth"), (1, "casual"), (2, "dream")]
 sizes = [(0, "xs"), (1, "s"), (2, "m"), (3, "l"), (4, "xl")]
+clothes = [
+    {'title': 'Котический свитер',
+    'description': 'Свитер с котятами в готическом стиле согрет вас даже в самую неприветливую погоду'},
+    {'title': 'Перчатки-котятки',
+    'description': 'Разноцветные перчатки не только согреют ваши руки, но и поднимут настроение'}
+]
 
 def userInitialezed(request):
     if request.method == 'POST':
@@ -28,7 +34,7 @@ def userInitialezed(request):
             for i in favSizes:
                 favSizesName.append(sizes[int(i)][1])
 
-            response = render(request, 'store_page.html')
+            response = render(request, 'store_page.html', context = {'clothes': clothes})
             #HttpResponse(f"<p>Привет, {name}!</p> <p>Тема твоего сайта: {themes[int(themeColor)][1]}. Твои любимые стили: {favStylesName}</p>")
             response.set_cookie("name", name)
             response.set_cookie("themeColor", themeColor)
