@@ -7,8 +7,12 @@ styles = [(0, "goth"), (1, "casual"), (2, "dream")]
 sizes = [(0, "xs"), (1, "s"), (2, "m"), (3, "l"), (4, "xl")]
 clothes = [
     {'title': 'Котический свитер',
+    'style': 'goth',
+    'src': 'static/goth_sweater.jpg',
     'description': 'Свитер с котятами в готическом стиле согрет вас даже в самую неприветливую погоду'},
     {'title': 'Перчатки-котятки',
+    'style': 'dream',
+    'src': 'static/dream_gloves.jpg',
     'description': 'Разноцветные перчатки не только согреют ваши руки, но и поднимут настроение'}
 ]
 
@@ -29,7 +33,7 @@ def userInitialezed(request):
 
             favSizes = form.cleaned_data['favSizes']
             if len(favSizes) == 0:
-                favSizes = ['0', '1', '2', '3']
+                favSizes = ['0', '1', '2', '3', '4']
             favSizesName = []
             for i in favSizes:
                 favSizesName.append(sizes[int(i)][1])
@@ -38,8 +42,8 @@ def userInitialezed(request):
             #HttpResponse(f"<p>Привет, {name}!</p> <p>Тема твоего сайта: {themes[int(themeColor)][1]}. Твои любимые стили: {favStylesName}</p>")
             response.set_cookie("name", name)
             response.set_cookie("themeColor", themeColor)
-            response.set_cookie("favStyles", favStyles)
-            response.set_cookie("favSizes", favSizes)
+            response.set_cookie("favStyles", favStylesName)
+            response.set_cookie("favSizes", favSizesName)
 
             return response
             

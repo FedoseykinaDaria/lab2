@@ -5,9 +5,12 @@
         <p>Поздравляем, вы настроили страницу!</p>
         <div class = "container">
             {% for note in clothes %}
-                <h2>{{note.title}}</h2>
-                <p>{{note.description}}</p>
-                <br>
+                {% if note.style in request.COOKIES.favStyles %}  
+                    <h2>{{note.title}}</h2>
+                    <img src={{note.src}}/>
+                    <p>{{note.description}}</p>
+                    <br>
+                {% endif %}
             {% endfor %}
         </div>
     </body>
