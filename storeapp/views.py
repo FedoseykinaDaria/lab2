@@ -9,9 +9,11 @@ clothes = [
     {'title': 'Котический свитер',
     'style': 'goth',
     'src': 'static/goth_sweater.jpg',
+    'size': ['xs', 's', 'm'],
     'description': 'Свитер с котятами в готическом стиле согрет вас даже в самую неприветливую погоду'},
     {'title': 'Перчатки-котятки',
     'style': 'dream',
+    'size': ['xs', 's', 'm', 'l', 'xl'],
     'src': 'static/dream_gloves.jpg',
     'description': 'Разноцветные перчатки не только согреют ваши руки, но и поднимут настроение'}
 ]

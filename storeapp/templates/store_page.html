@@ -4,14 +4,17 @@
     <body>
         <p>Поздравляем, вы настроили страницу!</p>
         <div class = "container">
-            {% for note in clothes %}
-                {% if note.style in request.COOKIES.favStyles %}  
-                    <h2>{{note.title}}</h2>
-                    <img src={{note.src}}/>
-                    <p>{{note.description}}</p>
-                    <br>
-                {% endif %}
-            {% endfor %}
+            <div class = "note">
+                {% for note in clothes %}
+                    {% if note.style in request.COOKIES.favStyles %}  
+                        <h2>{{note.title}}</h2>
+                        <p>{{note.size}}</p>
+                        <img src={{note.src}}/>
+                        <p>{{note.description}}</p>
+                        <br>
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
     </body>
 </html>
